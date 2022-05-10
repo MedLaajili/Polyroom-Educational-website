@@ -4,6 +4,10 @@ const bcrypt = require('bcrypt')
 //const { stringify } = require('nodemon/lib/utils');
 
 const userSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true,
+    },
     email:{
         type: String,
         required:[true,'Please enter an email'],
@@ -16,6 +20,9 @@ const userSchema = new mongoose.Schema({
         required: [true,'please enter your password'],
         minlength: [6,'minimum password length is 6 characters']
     },
+    status:{
+        type:String,
+    }
 });
 
 //fire a function before doc saved to db (hashing password)

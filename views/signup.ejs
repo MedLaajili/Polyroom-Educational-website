@@ -13,7 +13,7 @@
     <div id="menu" class="fas fa-bars"></div>
 
     <nav class="navbar">
-        <a href="/"><i class="bi bi-door-open-fill"></i>Log<span>In</span></a>
+        <a href="/login"><i class="bi bi-door-open-fill"></i>Log<span>In</span></a>
     </nav>
 
 
@@ -32,24 +32,21 @@
 <form class="" action="">
 
     <div class="inputBox">
-        <input type="text" placeholder="name">
-        <input type="email" placeholder="email">
+        <input type="text" name="name" placeholder="Fullname">
+        <input type="email" name="email" placeholder="email">
     </div>
 
-    <input type="text" placeholder="subject" class="box">
+    <input type="text" name="password" placeholder="Password" class="box">
 
-   <div class="box form-check">
-  <input class="form-check-input" type="radio" name="teacher" id="teacher">
-  <label class="form-check-label" for="teacher">
-    Teacher
-  </label>
-</div>
-<div class="box form-check">
-  <input class="form-check-input" type="radio" name="student" id="student" checked>
-  <label class="form-check-label" for="student">
-    Student
-  </label>
-</div>
+    <label for="subject" class="form-label">what is your status?</label>
+    <div class="input-group box">
+        <span class="input-group-text">
+        </span>
+        <select class="form-select" name="status" id="subject">
+            <option value="teacher" selected>Teacher</option>
+            <option value="student">Student</option>
+        </select>
+    </div>
 
     <input type="submit" class="btn" value="Subscribe">
 
@@ -111,7 +108,21 @@
 
 
 
+<script>
+    const form = document.querySelector('form');
 
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault
+    })
+
+    //get the values
+    const name = form.name.value;
+    const email =form.email.value;
+    const password = form.password.value;
+    const status = form.status.value;
+
+    console.log(name,email,password,status);
+</script>
 
 
 
