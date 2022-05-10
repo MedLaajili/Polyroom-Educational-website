@@ -17,6 +17,12 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+//fire a function before doc saved to db (hashing password)
+userSchema.pre('save',function(next){
+    
+    //next();
+})
+
 const User = mongoose.model('user', userSchema);
 
 module.exports = User;
