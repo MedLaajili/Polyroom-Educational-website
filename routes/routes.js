@@ -3,7 +3,7 @@ const router = express.Router();
 //const Blog = require('../Models/blog');
 const Controller = require('../Controllers/Controller');
 // Blog routes
-router.get('/',Controller.index);
+router.get('/home',Controller.index);
 //router.get('/teacher',Controller.teacher);
 //router.get('/course',Controller.course);
 //router.get('/create',BlogController.blog_create);

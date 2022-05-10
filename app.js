@@ -59,7 +59,7 @@ app.get('/single-blog',(req,res)=>{
 
 //routes
 app.get('/',(req,res)=>{
-res.redirect('/home');
+res.render('signup',{title:'Welcome'});
 });
 app.get('/contact',(req,res)=>{
     res.render('contact',{title:'Contactez-nous'});
