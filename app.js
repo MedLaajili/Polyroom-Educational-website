@@ -1,6 +1,6 @@
 const express = require('express');
-//var morgan = require('morgan');
-//const mongoose = require('mongoose');
+var morgan = require('morgan');
+const mongoose = require('mongoose');
 const Router = require('./routes/routes');
 const { render } = require('ejs');
 
@@ -8,11 +8,10 @@ const { render } = require('ejs');
 const app = express();
 
 //connect to mongoDB
-/* const dbURI = 'mongodb+srv://laajili:test1234@nodetuto.n1hyy.mongodb.net/node-DB?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://laajili:test1234@nodetuto.n1hyy.mongodb.net/node-DB?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology:true})
-    .then((result)=>*/
-    app.listen(3000)
-//.catch((err)=>console.log(err));
+    .then((result)=>app.listen(3000))
+    .catch((err)=>console.log(err));
 
 //Register view engine
 app.set('view engine','ejs');
