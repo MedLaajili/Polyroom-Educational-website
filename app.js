@@ -74,6 +74,19 @@ app.get('/course',(req,res)=>{
 //blog routes
 app.use('/',Router);
 
+//cookies
+app.get('/set-cookies',(req,res)=>{
+    //res.setHeader('Set-Cookie','newUser-true');
+    res.cookie('newUser',false);
+    res.cookie('isEmployee',true,{maxAge:1000*60*60*24,httpOnly: true});
+
+    res.send('you got the cookies!');
+});
+
+app.get('/read-cookies',(req,res)=>{
+
+});
+
 //404 page
 //app.use((req,res)=>{
 //    res.status(404).render('404',{title:'Error'});
