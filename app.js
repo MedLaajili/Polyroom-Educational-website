@@ -18,8 +18,9 @@ app.set('view engine','ejs');
 
 //middleware & statis files
 app.use(express.static('public'));
+app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 /*mongoose and mongo sandbox routes
 app.get('/add-blog',(req,res)=>{
@@ -58,7 +59,7 @@ app.get('/single-blog',(req,res)=>{
 
 //routes
 app.get('/',(req,res)=>{
-res.render('signup',{title:'Welcome'});
+res.redirect('/signup');
 });
 app.get('/contact',(req,res)=>{
     res.render('contact',{title:'Contactez-nous'});
@@ -71,7 +72,7 @@ app.get('/course',(req,res)=>{
 });
 
 //blog routes
-app.use('/home/',Router);
+app.use('/',Router);
 
 //404 page
 //app.use((req,res)=>{

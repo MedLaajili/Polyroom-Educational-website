@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 //const Blog = require('../Models/blog');
 const Controller = require('../Controllers/Controller');
+
+//Authetification
+router.get('/signup',Controller.signup_get);
+router.post('/signup',Controller.signup_post)
+router.get('/login',Controller.login_get)
+router.post('/login',Controller.login_post)
 // Blog routes
 router.get('/home',Controller.index);
 //router.get('/teacher',Controller.teacher);
