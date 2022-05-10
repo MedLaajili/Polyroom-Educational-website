@@ -8,7 +8,7 @@ const { render } = require('ejs');
 const app = express();
 
 //connect to mongoDB
-const dbURI = 'mongodb+srv://laajili:test1234@nodetuto.n1hyy.mongodb.net/node-DB?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://laajili:test1234@nodetuto.n1hyy.mongodb.net/PolyRoomDB?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology:true})
     .then((result)=>app.listen(3000))
     .catch((err)=>console.log(err));
