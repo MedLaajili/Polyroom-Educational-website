@@ -3,6 +3,7 @@ var morgan = require('morgan');
 const mongoose = require('mongoose');
 const Router = require('./routes/routes');
 const { render } = require('ejs');
+const cookieParser = require('cookie-parser');
 
 // express app
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
+app.use(cookieParser);
 
 /*mongoose and mongo sandbox routes
 app.get('/add-blog',(req,res)=>{
